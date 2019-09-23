@@ -20,4 +20,11 @@ class DemoLengthTest {
 
         assertEquals(3, length);
     }
+
+    @Test
+    void sameLength() {
+        final int length = DemoLength.length("123", "123");
+
+        assertEquals(3, length);
+    }
 }
