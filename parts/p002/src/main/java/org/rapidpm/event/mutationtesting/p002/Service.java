@@ -9,7 +9,7 @@ public class Service {
 
     public int add(int a, int b) {
         if (a < 2) {
-            return (a + b) * -1;
+            return (a - b) * -1;
         } else if (b > 0) {
           return b - a;
         } else {
