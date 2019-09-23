@@ -9,21 +9,11 @@ public class Service {
 
   public int add(int a , int b) {
     if (a < 2) {
-      return (a + b) * - 1 ;
+      return (a + b) * -1;
+    } else if (b >= 4) {
+      return b * a;
     } else {
       return a + b;
     }
-  }
-
-  public int tuWas(int a, int b, int c){
-    int ergebnis = 0;
-    for(int i=0; i<c; i++){
-      if(a<b){
-        ergebnis +=  a * i - b;
-      } else {
-        ergebnis +=  a + b + i;
-      }
-    }
-    return ergebnis;
   }
 }
