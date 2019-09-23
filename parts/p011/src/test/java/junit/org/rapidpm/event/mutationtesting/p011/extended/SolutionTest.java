@@ -2,9 +2,11 @@ package junit.org.rapidpm.event.mutationtesting.p011.extended;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.rapidpm.event.mutationtesting.p011.extended.Solution;
 
+@Disabled
 public class SolutionTest {
   @Test
   void test001() {

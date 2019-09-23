@@ -2,9 +2,11 @@ package junit.org.rapidpm.event.mutationtesting.p011.extended;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.rapidpm.event.mutationtesting.p011.extended.Service;
 
+@Disabled
 class TestService {
 
 	@Test
