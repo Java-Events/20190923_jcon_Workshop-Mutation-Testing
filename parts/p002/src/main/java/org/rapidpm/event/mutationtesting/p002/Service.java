@@ -14,4 +14,10 @@ public class Service {
       return a + b;
     }
   }
+
+  public int subAbs(int a, int b) {
+      int aAbs = Math.abs(a);
+      int bAbs = Math.abs(b);
+      return  a < b ? aAbs - bAbs : bAbs - aAbs;
+  }
 }
