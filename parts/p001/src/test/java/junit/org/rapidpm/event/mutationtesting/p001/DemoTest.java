@@ -1,19 +1,14 @@
 package junit.org.rapidpm.event.mutationtesting.p001;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.AfterEachCallback;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
-
 @ExtendWith(DemoTest.MySecondExtension.class)
 @ExtendWith(DemoTest.MyFirstExtension.class)
-
 public class DemoTest {
 
 
@@ -48,7 +43,7 @@ public class DemoTest {
     @Override
     public void beforeEach(ExtensionContext extensionContext)
         throws Exception {
-      System.out.println("beafore each - 002");
+      System.out.println("before each - 002");
     }
   }
 
