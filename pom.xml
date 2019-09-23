@@ -8,7 +8,7 @@
   <parent>
     <groupId>org.rapidpm</groupId>
     <artifactId>rapidpm-dependencies</artifactId>
-    <version>04.00.18-RPM</version>
+    <version>04.01.15-RPM</version>
   </parent>
 
   <groupId>org.rapidpm.event.jcon2019</groupId>
@@ -76,12 +76,12 @@
     <vaadin-testbench-v10.version>6.0.1</vaadin-testbench-v10.version>
 
 
-    <webdriverextensions-maven-plugin.version>3.1.3</webdriverextensions-maven-plugin.version>
-    <rapidpm-vaadin-dependencies.version>01.00.01-RPM</rapidpm-vaadin-dependencies.version>
-    <rapidpm-vaadin-testbench-ng.version>01.00.01-RPM</rapidpm-vaadin-testbench-ng.version>
+<!--    <webdriverextensions-maven-plugin.version>3.1.3</webdriverextensions-maven-plugin.version>-->
+<!--    <rapidpm-vaadin-dependencies.version>01.00.01-RPM</rapidpm-vaadin-dependencies.version>-->
+<!--    <rapidpm-vaadin-testbench-ng.version>01.00.01-RPM</rapidpm-vaadin-testbench-ng.version>-->
     <!--Initializer-->
-    <meecrowave.version>1.2.6</meecrowave.version>
-    <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
+<!--    <meecrowave.version>1.2.6</meecrowave.version>-->
+<!--    <javax.servlet-api.version>4.0.1</javax.servlet-api.version>-->
   </properties>
 
   <repositories>
