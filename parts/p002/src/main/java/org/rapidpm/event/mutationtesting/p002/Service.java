@@ -10,8 +10,10 @@ public class Service {
   public int add(int a , int b) {
     if (a < 2) {
       return (a + b) * - 1;
-    } else {
+    } else if (a > 5) {
       return a + b;
+    } else {
+    	return a;
     }
   }
 }
