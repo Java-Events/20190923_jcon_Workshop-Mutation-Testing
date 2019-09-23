@@ -7,11 +7,11 @@ package org.rapidpm.event.mutationtesting.p002;
  */
 public class Service {
 
-  public int add(int a , int b) {
-    if (a < 2) {
-      return (a + b) * - 1;
-    } else {
-      return a + b;
-    }
-  }
+	public int add(int a, int b) {
+		if (a >= 2) {
+			return a / (a * b);
+		} else {
+			return 1 - Math.abs(a - b);
+		}
+	}
 }
