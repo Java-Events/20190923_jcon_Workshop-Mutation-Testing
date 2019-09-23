@@ -1,4 +1,4 @@
-package junit.org.rapidpm.event.mutationtesting.p002
+package org.rapidpm.event.mutationtesting.p002
 
 /**
  * Create the best test coverage you can.
