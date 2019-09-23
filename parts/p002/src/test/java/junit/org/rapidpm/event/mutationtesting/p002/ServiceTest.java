@@ -19,11 +19,38 @@ class ServiceTest {
     assertEquals(2, result);
   }
 
+//  @Test
+//  void test002() {
+//    final Service service = new Service();
+//    
+//    final int result = service.add(1, 0);
+//    assertEquals(-1, result);
+//  }
+//
   @Test
-  void test002() {
+  void test003() {
     final Service service = new Service();
     
-    final int result = service.add(1, 0);
-    assertEquals(-1, result);
+    final int result = service.add(6, 6);
+    assertEquals(12, result);
   }
+
+  @Test
+  void test004() {
+    //start here...
+    final Service service = new Service();
+
+    final int result = service.add(1, 1);
+    assertEquals(-2, result);
+  }
+
+  @Test
+  void test005() {
+    //start here...
+    final Service service = new Service();
+
+    final int result = service.add(5, 5);
+    assertEquals(5, result);
+  }
+
 }
