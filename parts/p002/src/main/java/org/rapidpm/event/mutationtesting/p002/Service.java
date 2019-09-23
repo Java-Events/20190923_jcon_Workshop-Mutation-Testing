@@ -11,7 +11,7 @@ public class Service {
     if (a < 2) {
       return (a + b) * - 1;
     } else {
-      return a + b;
+      return a + b >10 ? 42 : a + b;
     }
   }
 }
