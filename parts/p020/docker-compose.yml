@@ -1,0 +1,26 @@
+
+
+#docker run \
+#--rm \
+#--name deploy-mvn-central \
+#-v "/Users/svenruppert/.m2/settings.xml":/root/.m2/settings.xml \
+#-v "/Users/svenruppert/.gnupg":/root/.gnupg \
+#-v "$(pwd)":/usr/src/mymaven \
+#-w /usr/src/mymaven \
+#svenruppert/maven-3.5-jdk-08 \
+#mvn clean deploy -Dmaven.test.skip=true
+
+version: '3.5'
+
+services:
+  deploy:
+    image: svenruppert/maven-3.5-jdk-08
+    container_name: deploy
+    hostname: deploy
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - $PWD/:/usr/src/mymaven
+      - ~/.m2/settings.xml:/root/.m2/settings.xml
+      - ~/.gnupg/:/root/.gnupg/
+    working_dir: /usr/src/mymaven
+    command: 'mvn clean deploy -Dmaven.test.skip=true'

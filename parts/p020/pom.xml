@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <groupId>org.rapidpm.event.jcon2019</groupId>
+    <artifactId>workshop-mutation-testing-parts</artifactId>
+    <version>01.00.00-RPM-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>workshop-mutation-testing-parts-p020</artifactId>
+
+
+  <properties>
+    <!--<maven.install.skip>true</maven.install.skip>-->
+    <maven.deploy.skip>true</maven.deploy.skip>
+
+  </properties>
+
+  <!-- Just to disable any accidential deployment to maven.central -->
+  <distributionManagement>
+    <repository>
+      <id>localhost</id>
+      <url>file://${basedir}/target/repo/</url>
+    </repository>
+    <snapshotRepository>
+      <id>localhost</id>
+      <url>file://${basedir}/target/snapshot-repo/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.rapidpm</groupId>
+        <artifactId>rapidpm-vaadin-dependencies-bom</artifactId>
+        <version>${rapidpm-vaadin-dependencies.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+
+      <!--Version definitions from parent-->
+      <dependency>
+        <groupId>org.rapidpm</groupId>
+        <artifactId>rapidpm-vaadin-dependencies-bom-v10</artifactId>
+        <version>${rapidpm-vaadin-dependencies.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.rapidpm</groupId>
+      <artifactId>rapidpm-vaadin-testbench-ng-m-framework-v10</artifactId>
+      <version>${rapidpm-vaadin-testbench-ng.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.vaadin</groupId>
+      <artifactId>vaadin-core</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.vaadin</groupId>
+      <artifactId>vaadin-lumo-theme</artifactId>
+    </dependency>
+
+    <!--For TestUI only-->
+    <dependency>
+      <groupId>com.vaadin</groupId>
+      <artifactId>vaadin-testbench</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.6</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.rapidpm</groupId>
+      <artifactId>rapidpm-vaadin-testbench-ng-m-pageobject-vaadin-v10-tb</artifactId>
+      <version>${rapidpm-vaadin-testbench-ng.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.rapidpm</groupId>
+      <artifactId>rapidpm-junit5-ext-servlet-container-impl-meecrowave</artifactId>
+      <version>${rapidpm-vaadin-testbench-ng.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!--Meecrowave impl-->
+    <dependency>
+      <groupId>org.apache.meecrowave</groupId>
+      <artifactId>meecrowave-core</artifactId>
+      <version>${meecrowave.version}</version>
+    </dependency>
+
+  </dependencies>
+
+
+  <profiles>
+    <profile>
+      <id>-vaadin-addon-testbench-webdrivers</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.github.webdriverextensions</groupId>
+            <artifactId>webdriverextensions-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>install-drivers</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <keepDownloadedWebdrivers>true</keepDownloadedWebdrivers>
+              <!--Distributed FS-->
+              <!--<installationDirectory>/Users/andidev/drivers</installationDirectory>-->
+              <installationDirectory>_data/webdrivers</installationDirectory>
+              <drivers>
+                <driver>
+                  <name>chromedriver</name>
+                </driver>
+                <!--<driver>-->
+                <!--<name>operadriver</name>-->
+                <!--</driver>-->
+                <!--<driver>-->
+                <!--<name>geckodriver</name>-->
+                <!--</driver>-->
+              </drivers>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>

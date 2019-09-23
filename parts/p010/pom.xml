@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <groupId>org.rapidpm.event.jcon2019</groupId>
+    <artifactId>workshop-mutation-testing-parts</artifactId>
+    <version>01.00.00-RPM-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>workshop-mutation-testing-parts-p010</artifactId>
+  <packaging>jar</packaging>
+
+  <build>
+    <plugins>
+      <!--Enable mutation testing-->
+      <plugin>
+        <groupId>org.pitest</groupId>
+        <artifactId>pitest-maven</artifactId>
+        <dependencies>
+          <dependency>
+            <groupId>org.pitest</groupId>
+            <artifactId>pitest-junit5-plugin</artifactId>
+            <version>${pitest-junit5-plugin.version}</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <threads>2</threads>
+          <outputFormats>
+            <outputFormat>XML</outputFormat>
+            <outputFormat>HTML</outputFormat>
+          </outputFormats>
+          <targetClasses>
+            <param>${pitest-prod-classes}</param>
+            <!--<param>org.reflections.*</param>-->
+          </targetClasses>
+          <targetTests>
+            <param>${pitest-test-classes}</param>
+          </targetTests>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

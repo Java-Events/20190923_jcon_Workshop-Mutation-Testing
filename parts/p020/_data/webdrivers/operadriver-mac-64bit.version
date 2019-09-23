@@ -1,0 +1,7 @@
+{
+  "name": "operadriver",
+  "platform": "mac",
+  "bit": "64",
+  "version": "2.30",
+  "url": "https://github.com/operasoftware/operachromiumdriver/releases/download/v.2.30/operadriver_mac64.zip"
+}

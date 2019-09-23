@@ -1,0 +1,7 @@
+{
+  "name": "geckodriver",
+  "platform": "mac",
+  "bit": "64",
+  "version": "0.21.0",
+  "url": "https://github.com/mozilla/geckodriver/releases/download/v0.21.0/geckodriver-v0.21.0-macos.tar.gz"
+}
